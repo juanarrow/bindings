@@ -12,13 +12,33 @@
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-item>
-    <ion-label position="floating">Nombre</ion-label>
-    <ion-input (keyup.enter)="addPerson(name)" placeholder="Introduce el nombre" [(ngModel)]="name" required></ion-input>
-  </ion-item>
-  <ion-button expand="full" (click)="addPerson(name)">Añadir</ion-button>
-  <div>
-    <ion-text id="empty-list" color="warning" *ngIf="people.length==0">No existen personas aún</ion-text>
-  </div>
-  <app-person *ngFor="let person of people" [data]="person" (onremove)="removePerson($event)"></app-person>
+  
+  <ion-grid>
+
+    <ion-row>
+      <ion-col size="12" size-sm="6">
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input (keyup.enter)="addPerson(name)" placeholder="Introduce el nombre" [(ngModel)]="name" required></ion-input>
+        </ion-item>
+        <ion-button expand="full" (click)="addPerson(name)">Añadir</ion-button>
+        <div>
+          <ion-text id="empty-list" color="warning" *ngIf="people.length==0">No existen personas aún</ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-grid>
+          <ion-row>
+            <ng-template ngFor let-i="index" let-c="count" let-person [ngForOf]="people">
+              <ion-col size="12" size-sm="4">
+                <app-person  [data]="person" (onremove)="removePerson($event)"></app-person>
+              </ion-col>
+            </ng-template>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
