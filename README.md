@@ -34,7 +34,7 @@ Al borrar una persona, la directiva *ngFor se volverá a ejecutar por lo que el 
 
 @Output (Eventos de salida) (<https://angular.io/api/core/Output>)
 
-creación de componentes <https://www.bing.com/search?q=comandos+ionic+generate&cvid=d67e82c1f74f4594b75755f06d9ccff7&aqs=edge..69i57.4123j0j1&pglt=2083&FORM=ANNTA1&PC=NMTS>
+creación de componentes https://ionicframework.com/docs/cli/commands/generate>
 
 
 
